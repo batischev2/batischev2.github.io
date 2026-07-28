@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Виктор Батищев — разработка сайтов, мобильных приложений, SEO, парсеров и чат-ботов. Полный цикл: от идеи до запуска." />
+  <meta name="theme-color" content="#0B3D4A" />
+  <meta property="og:title" content="Виктор Батищев — разработка и ИТ" />
+  <meta property="og:description" content="Сайты, приложения, SEO, боты и консультации. Быстрый старт и прозрачный процесс." />
+  <meta property="og:type" content="website" />
+  <title>Виктор Батищев — разработка сайтов и приложений</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Sora:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="site-header" id="top">
+    <a class="logo" href="#top" aria-label="Наверх">Виктор Батищев</a>
+    <nav class="nav" aria-label="Основная навигация">
+      <a href="#services">Услуги</a>
+      <a href="#process">Как работаю</a>
+      <a href="#stack">Стек</a>
+      <a href="#faq">FAQ</a>
+      <a class="nav-cta" href="#contact">Обсудить проект</a>
+    </nav>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Меню">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <div class="mobile-nav" id="mobile-nav" hidden>
+    <a href="#services">Услуги</a>
+    <a href="#process">Как работаю</a>
+    <a href="#stack">Стек</a>
+    <a href="#faq">FAQ</a>
+    <a href="#contact">Обсудить проект</a>
+  </div>
+
+  <main>
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="hero-plane"></div>
+        <div class="hero-orbit"></div>
+        <div class="hero-grid"></div>
+      </div>
+      <div class="hero-inner">
+        <p class="brand-mark">Виктор Батищев</p>
+        <h1>Цифровые продукты,<br />которые приносят заявки</h1>
+        <p class="hero-lead">Сайты, мобильные приложения, SEO, боты и ИТ-консультации — от идеи до стабильного запуска.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#contact">Получить оценку проекта</a>
+          <a class="btn btn-ghost" href="#services">Смотреть услуги</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust" aria-label="Ключевые факты">
+      <div class="trust-track">
+        <div class="trust-item"><strong>6+</strong><span>направлений услуг</span></div>
+        <div class="trust-item"><strong>Full-cycle</strong><span>от дизайна до деплоя</span></div>
+        <div class="trust-item"><strong>Web + Mobile</strong><span>один подрядчик</span></div>
+        <div class="trust-item"><strong>24–72ч</strong><span>ответ по брифу</span></div>
+      </div>
+    </section>
+
+    <section class="pain" id="why">
+      <div class="section-head">
+        <p class="eyebrow">Зачем ко мне</p>
+        <h2>Когда нужен разработчик, а не бесконечные правки</h2>
+        <p class="section-lead">Беру задачу целиком: архитектура, интерфейс, код, запуск и дальнейшая поддержка.</p>
+      </div>
+      <ul class="pain-list">
+        <li>
+          <h3>Нет времени искать 5 специалистов</h3>
+          <p>Сайт, приложение, SEO и интеграции — в одном контуре, с понятными сроками и этапами.</p>
+        </li>
+        <li>
+          <h3>Нужен результат, а не «красивый макет»</h3>
+          <p>Делаю интерфейсы и код под конверсию: скорость, ясный оффер, аналитика и SEO-база.</p>
+        </li>
+        <li>
+          <h3>Хочется предсказуемый процесс</h3>
+          <p>Фиксируем цели, объём и критерии готовности. Вы всегда понимаете, на каком этапе проект.</p>
+        </li>
+      </ul>
+    </section>
+
+    <section class="services" id="services">
+      <div class="section-head">
+        <p class="eyebrow">Услуги</p>
+        <h2>Что могу сделать для вашего бизнеса</h2>
+        <p class="section-lead">Выберите направление — или напишите задачу своими словами, подскажу оптимальный путь.</p>
+      </div>
+      <div class="service-list">
+        <article class="service">
+          <span class="service-num">01</span>
+          <h3>Лендинги и сайты любой сложности</h3>
+          <p>От продающих одностраничников до многостраничных сервисов и личных кабинетов на современном стеке.</p>
+          <ul>
+            <li>Структура и тексты под оффер</li>
+            <li>Адаптив и высокая скорость</li>
+            <li>Формы, CRM, аналитика</li>
+          </ul>
+        </article>
+        <article class="service">
+          <span class="service-num">02</span>
+          <h3>Кроссплатформенные мобильные приложения</h3>
+          <p>iOS и Android из одной кодовой базы на Flutter или React Native — быстрее и дешевле нативной пары.</p>
+          <ul>
+            <li>MVP и продуктовые релизы</li>
+            <li>API, авторизация, пуши</li>
+            <li>Публикация в сторы</li>
+          </ul>
+        </article>
+        <article class="service">
+          <span class="service-num">03</span>
+          <h3>SEO-оптимизация и продвижение</h3>
+          <p>Техническая база, контентная структура и рост органики без «чёрных» схем.</p>
+          <ul>
+            <li>Аудит и исправление ошибок</li>
+            <li>Скорость и Core Web Vitals</li>
+            <li>Семантика и посадочные</li>
+          </ul>
+        </article>
+        <article class="service">
+          <span class="service-num">04</span>
+          <h3>Консультирование в сфере ИТ</h3>
+          <p>Помогу выбрать стек, оценить подрядчика, спланировать архитектуру или дорожную карту продукта.</p>
+          <ul>
+            <li>Разбор ТЗ и рисков</li>
+            <li>Технический аудит</li>
+            <li>Стратегия разработки</li>
+          </ul>
+        </article>
+        <article class="service">
+          <span class="service-num">05</span>
+          <h3>Парсеры и чат-боты</h3>
+          <p>Автоматизация сбора данных и общения с клиентами в Telegram и на сайте.</p>
+          <ul>
+            <li>Парсинг и интеграции</li>
+            <li>Боты продаж и поддержки</li>
+            <li>Уведомления и сценарии</li>
+          </ul>
+        </article>
+        <article class="service">
+          <span class="service-num">06</span>
+          <h3>Дизайн и сайты на CMS</h3>
+          <p>Удобные сайты на популярных CMS: вы сами можете менять контент без разработчика.</p>
+          <ul>
+            <li>Дизайн под бренд</li>
+            <li>WordPress и аналоги</li>
+            <li>Обучение работе с админкой</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="process" id="process">
+      <div class="section-head">
+        <p class="eyebrow">Процесс</p>
+        <h2>От первого сообщения до запуска</h2>
+        <p class="section-lead">Прозрачные этапы — без сюрпризов в середине проекта.</p>
+      </div>
+      <ol class="steps">
+        <li>
+          <span class="step-index">1</span>
+          <div>
+            <h3>Бриф и оценка</h3>
+            <p>Уточняем цели, аудиторию и ограничения. Вы получаете объём, сроки и стоимость.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-index">2</span>
+          <div>
+            <h3>Прототип и дизайн</h3>
+            <p>Согласовываем структуру и визуал до активной разработки, чтобы не переделывать код.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-index">3</span>
+          <div>
+            <h3>Разработка и тесты</h3>
+            <p>Итерации с демо: смотрите прогресс, даёте фидбек, проверяем на реальных устройствах.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-index">4</span>
+          <div>
+            <h3>Запуск и поддержка</h3>
+            <p>Деплой, аналитика, инструкции. По желанию — сопровождение и развитие.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <section class="stack" id="stack">
+      <div class="section-head">
+        <p class="eyebrow">Стек</p>
+        <h2>Инструменты, на которых строю решения</h2>
+        <p class="section-lead">Подбираю технологии под задачу, а не наоборот.</p>
+      </div>
+      <ul class="stack-grid">
+        <li>React</li>
+        <li>Vue</li>
+        <li>Angular</li>
+        <li>TypeScript</li>
+        <li>Vite</li>
+        <li>Node.js</li>
+        <li>Express</li>
+        <li>Flutter</li>
+        <li>React Native</li>
+        <li>Docker</li>
+      </ul>
+    </section>
+
+    <section class="offer">
+      <div class="offer-panel">
+        <p class="eyebrow">Быстрый старт</p>
+        <h2>Бесплатная первичная оценка за 24–72 часа</h2>
+        <p>Опишите задачу в Telegram или на почту — верну понимание объёма, сроков и следующего шага.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://t.me/batischev97" target="_blank" rel="noopener">Написать в Telegram</a>
+          <a class="btn btn-ghost" href="mailto:vitek.batishev97@gmail.com">Отправить email</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="faq">
+      <div class="section-head">
+        <p class="eyebrow">FAQ</p>
+        <h2>Частые вопросы перед стартом</h2>
+      </div>
+      <div class="faq-list">
+        <details open>
+          <summary>Сколько стоит разработка?</summary>
+          <p>Зависит от объёма: лендинг, сложный сайт, приложение или бот. После короткого брифа даю вилку и фиксирую смету по этапам.</p>
+        </details>
+        <details>
+          <summary>Сколько времени занимает проект?</summary>
+          <p>Лендинг — обычно от 1–2 недель. Сайт средней сложности — от 3–6 недель. Мобильное приложение и крупные системы — по roadmap после оценки.</p>
+        </details>
+        <details>
+          <summary>Можно ли начать с MVP?</summary>
+          <p>Да. Часто так и делаем: сначала рабочий минимум для проверки гипотезы, затем наращиваем функции.</p>
+        </details>
+        <details>
+          <summary>Вы делаете дизайн сами?</summary>
+          <p>Да. Могу спроектировать интерфейс с нуля или реализовать по вашему макету в Figma.</p>
+        </details>
+        <details>
+          <summary>Как происходит оплата?</summary>
+          <p>По этапам: предоплата на старт, далее платежи по согласованным вехам. Для консультаций — почасово или фикс за сессию.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="section-head">
+        <p class="eyebrow">Контакты</p>
+        <h2>Давайте обсудим ваш проект</h2>
+        <p class="section-lead">Напишите удобным способом — отвечу и предложу план действий.</p>
+      </div>
+      <div class="contact-grid">
+        <a class="contact-link" href="https://t.me/batischev97" target="_blank" rel="noopener">
+          <span class="contact-label">Telegram</span>
+          <span class="contact-value">@batischev97</span>
+        </a>
+        <a class="contact-link" href="mailto:vitek.batishev97@gmail.com">
+          <span class="contact-label">Email</span>
+          <span class="contact-value">vitek.batishev97@gmail.com</span>
+        </a>
+        <a class="contact-link" href="tel:+79493528458">
+          <span class="contact-label">Телефон</span>
+          <span class="contact-value">+7 949 352-84-58</span>
+        </a>
+        <a class="contact-link" href="https://github.com/batischev2" target="_blank" rel="noopener">
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">batischev2</span>
+        </a>
+      </div>
+      <form class="lead-form" id="lead-form" action="mailto:vitek.batishev97@gmail.com" method="post" enctype="text/plain">
+        <p class="form-title">Или оставьте заявку прямо здесь</p>
+        <label>
+          Имя
+          <input type="text" name="name" autocomplete="name" required placeholder="Как к вам обращаться" />
+        </label>
+        <label>
+          Контакт
+          <input type="text" name="contact" required placeholder="Telegram, email или телефон" />
+        </label>
+        <label>
+          Задача
+          <textarea name="message" rows="4" required placeholder="Кратко: что нужно сделать и к какому сроку"></textarea>
+        </label>
+        <button class="btn btn-primary" type="submit">Отправить заявку</button>
+        <p class="form-note">Отправка откроет почтовый клиент. Быстрее — написать в Telegram.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <strong>Виктор Батищев</strong>
+      <p>Разработка сайтов, приложений и ИТ-решений</p>
+    </div>
+    <p class="copy">© <span id="year"></span> Victor Batischev</p>
+  </footer>
+
+  <a class="float-cta" href="https://t.me/batischev97" target="_blank" rel="noopener" aria-label="Написать в Telegram">TG</a>
+
+  <script src="main.js"></script>
+</body>
+</html>

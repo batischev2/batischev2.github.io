@@ -6,6 +6,7 @@ const I18N = {
     "meta.ogTitle": "Виктор Батищев — разработка и ИТ",
     "meta.ogDescription":
       "Сайты, приложения, SEO, боты и консультации. Быстрый старт и прозрачный процесс.",
+    "meta.ogImageAlt": "Виктор Батищев — сайты, приложения, SEO и ИТ-решения",
     "aria.top": "Наверх",
     "aria.nav": "Основная навигация",
     "aria.theme": "Переключить тему",
@@ -174,6 +175,7 @@ const I18N = {
     "meta.ogTitle": "Victor Batischev — development & IT",
     "meta.ogDescription":
       "Websites, apps, SEO, bots and consulting. Fast start and a clear process.",
+    "meta.ogImageAlt": "Victor Batischev — websites, apps, SEO and IT solutions",
     "aria.top": "Back to top",
     "aria.nav": "Primary navigation",
     "aria.theme": "Toggle theme",

@@ -9,11 +9,13 @@
   const langToggle = document.querySelector(".lang-toggle");
   const themeColorMeta = document.getElementById("theme-color-meta");
   const metaDescription = document.querySelector('meta[name="description"]');
-  const ogTitle = document.querySelector('meta[property="og:title"]');
-  const ogDescription = document.querySelector('meta[property="og:description"]');
+  const ogTitle = document.getElementById("og-title");
+  const ogDescription = document.getElementById("og-description");
   const ogLocale = document.getElementById("og-locale");
+  const ogImageAlt = document.getElementById("og-image-alt");
   const twitterTitle = document.getElementById("twitter-title");
   const twitterDescription = document.getElementById("twitter-description");
+  const twitterImageAlt = document.getElementById("twitter-image-alt");
 
   const t = (lang, key) => I18N[lang]?.[key] ?? I18N.ru[key] ?? key;
 
@@ -52,6 +54,8 @@
     ogDescription?.setAttribute("content", t(lang, "meta.ogDescription"));
     twitterTitle?.setAttribute("content", t(lang, "meta.ogTitle"));
     twitterDescription?.setAttribute("content", t(lang, "meta.ogDescription"));
+    ogImageAlt?.setAttribute("content", t(lang, "meta.ogImageAlt"));
+    twitterImageAlt?.setAttribute("content", t(lang, "meta.ogImageAlt"));
     ogLocale?.setAttribute("content", lang === "en" ? "en_US" : "ru_RU");
   };
 

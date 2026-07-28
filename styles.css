@@ -686,7 +686,12 @@ section {
 
 .case h3 {
   margin: 0;
-  max-width: 18ch;
+  max-width: none;
+}
+
+.case h3 .line {
+  display: block;
+  white-space: nowrap;
 }
 
 .case p {

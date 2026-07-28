@@ -98,7 +98,7 @@ const I18N = {
     "case.itg.title": "Платформа для аутстаффинга персонала",
     "case.itg.text":
       "Сервис подбора и управления IT-специалистами: заявки, команды, статусы и прозрачный цикл сотрудничества.",
-    "case.msa.title": "Автоматизация процессов на производстве",
+    "case.msa.title": "<span class=\"line\">Автоматизация процессов</span><span class=\"line\">на производстве</span>",
     "case.msa.text":
       "Система, которая снижает рутину на производстве: учёт операций, контроль этапов и ускорение внутренних процессов.",
     "case.as.title": "Система поиска и заказа эвакуаторов",
@@ -266,7 +266,7 @@ const I18N = {
     "case.itg.title": "Staff outstaffing platform",
     "case.itg.text":
       "A service for sourcing and managing IT specialists: requests, teams, statuses and a transparent collaboration cycle.",
-    "case.msa.title": "Manufacturing process automation",
+    "case.msa.title": "<span class=\"line\">Manufacturing process</span><span class=\"line\">automation</span>",
     "case.msa.text":
       "A system that cuts production routine: operation tracking, stage control and faster internal workflows.",
     "case.as.title": "Tow truck search and booking system",

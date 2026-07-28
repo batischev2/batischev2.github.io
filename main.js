@@ -11,6 +11,9 @@
   const metaDescription = document.querySelector('meta[name="description"]');
   const ogTitle = document.querySelector('meta[property="og:title"]');
   const ogDescription = document.querySelector('meta[property="og:description"]');
+  const ogLocale = document.getElementById("og-locale");
+  const twitterTitle = document.getElementById("twitter-title");
+  const twitterDescription = document.getElementById("twitter-description");
 
   const t = (lang, key) => I18N[lang]?.[key] ?? I18N.ru[key] ?? key;
 
@@ -47,6 +50,9 @@
     metaDescription?.setAttribute("content", t(lang, "meta.description"));
     ogTitle?.setAttribute("content", t(lang, "meta.ogTitle"));
     ogDescription?.setAttribute("content", t(lang, "meta.ogDescription"));
+    twitterTitle?.setAttribute("content", t(lang, "meta.ogTitle"));
+    twitterDescription?.setAttribute("content", t(lang, "meta.ogDescription"));
+    ogLocale?.setAttribute("content", lang === "en" ? "en_US" : "ru_RU");
   };
 
   const syncThemeUi = (theme) => {
@@ -73,6 +79,11 @@
     localStorage.setItem(langKey, lang);
     applyI18n(lang);
     syncThemeUi(root.getAttribute("data-theme") || "light");
+
+    const url = new URL(window.location.href);
+    if (lang === "en") url.searchParams.set("lang", "en");
+    else url.searchParams.delete("lang");
+    window.history.replaceState({}, "", url);
   };
 
   const currentLang =

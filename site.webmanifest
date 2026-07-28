@@ -1,0 +1,24 @@
+{
+  "name": "Victor Batischev — Development & IT",
+  "short_name": "Batischev",
+  "description": "Websites, mobile apps, SEO, bots and IT consulting by Victor Batischev.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F3F6F4",
+  "theme_color": "#0B6E6A",
+  "lang": "ru",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "64x64",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

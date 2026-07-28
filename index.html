@@ -3,12 +3,94 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Виктор Батищев — разработка сайтов и приложений</title>
   <meta name="description" content="Виктор Батищев — разработка сайтов, мобильных приложений, SEO, парсеров и чат-ботов. Полный цикл: от идеи до запуска." />
+  <meta name="keywords" content="разработка сайтов, лендинги, мобильные приложения, Flutter, React Native, SEO, чат-боты, парсеры, IT консультации, Виктор Батищев, Victor Batischev" />
+  <meta name="author" content="Victor Batischev" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <meta name="googlebot" content="index, follow" />
   <meta name="theme-color" content="#0B3D4A" id="theme-color-meta" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="canonical" href="https://batischev2.github.io/" />
+  <link rel="alternate" hreflang="ru" href="https://batischev2.github.io/" />
+  <link rel="alternate" hreflang="en" href="https://batischev2.github.io/?lang=en" />
+  <link rel="alternate" hreflang="x-default" href="https://batischev2.github.io/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Victor Batischev" />
+  <meta property="og:locale" content="ru_RU" id="og-locale" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:url" content="https://batischev2.github.io/" />
   <meta property="og:title" content="Виктор Батищев — разработка и ИТ" />
   <meta property="og:description" content="Сайты, приложения, SEO, боты и консультации. Быстрый старт и прозрачный процесс." />
-  <meta property="og:type" content="website" />
-  <title>Виктор Батищев — разработка сайтов и приложений</title>
+  <meta property="og:image" content="https://batischev2.github.io/og-image.svg" />
+  <meta property="og:image:alt" content="Victor Batischev — websites, apps, SEO and IT solutions" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Виктор Батищев — разработка и ИТ" id="twitter-title" />
+  <meta name="twitter:description" content="Сайты, приложения, SEO, боты и консультации. Быстрый старт и прозрачный процесс." id="twitter-description" />
+  <meta name="twitter:image" content="https://batischev2.github.io/og-image.svg" />
+
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+  <link rel="icon" href="/favicon.png" type="image/png" sizes="64x64" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://batischev2.github.io/#website",
+        "url": "https://batischev2.github.io/",
+        "name": "Victor Batischev",
+        "alternateName": "Виктор Батищев",
+        "inLanguage": ["ru", "en"],
+        "description": "Разработка сайтов, мобильных приложений, SEO, парсеров и чат-ботов.",
+        "publisher": { "@id": "https://batischev2.github.io/#person" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://batischev2.github.io/#person",
+        "name": "Victor Batischev",
+        "alternateName": "Виктор Батищев",
+        "url": "https://batischev2.github.io/",
+        "email": "mailto:vitek.bithev97@gmail.com",
+        "telephone": "+79493528458",
+        "jobTitle": "Full-stack developer",
+        "sameAs": [
+          "https://github.com/batischev2",
+          "https://t.me/batischev97"
+        ],
+        "knowsAbout": [
+          "React", "Vue", "Angular", "TypeScript", "Node.js", "Flutter",
+          "React Native", "SEO", "Web development", "Mobile apps"
+        ]
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://batischev2.github.io/#service",
+        "name": "Victor Batischev — Development & IT",
+        "url": "https://batischev2.github.io/",
+        "image": "https://batischev2.github.io/og-image.svg",
+        "description": "Landing pages and websites, cross-platform mobile apps, SEO, IT consulting, parsers, chatbots and CMS sites.",
+        "provider": { "@id": "https://batischev2.github.io/#person" },
+        "areaServed": "Worldwide",
+        "availableLanguage": ["Russian", "English"],
+        "serviceType": [
+          "Website development",
+          "Mobile app development",
+          "SEO optimization",
+          "IT consulting",
+          "Chatbot development",
+          "CMS websites"
+        ]
+      }
+    ]
+  }
+  </script>
+
   <script>
     (() => {
       const themeKey = "vb-theme";
@@ -18,8 +100,13 @@
         ? savedTheme
         : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       document.documentElement.setAttribute("data-theme", theme);
+
+      const params = new URLSearchParams(window.location.search);
+      const queryLang = params.get("lang");
       const savedLang = localStorage.getItem(langKey);
-      const lang = savedLang === "en" || savedLang === "ru" ? savedLang : "ru";
+      const lang = queryLang === "en" || queryLang === "ru"
+        ? queryLang
+        : (savedLang === "en" || savedLang === "ru" ? savedLang : "ru");
       document.documentElement.setAttribute("lang", lang);
       document.documentElement.setAttribute("data-lang", lang);
     })();

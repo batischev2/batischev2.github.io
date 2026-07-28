@@ -382,7 +382,7 @@ main,
 
 .hero-orbit {
   position: absolute;
-  right: -8%;
+  right: 4%;
   top: 8%;
   width: min(58vw, 640px);
   aspect-ratio: 1;

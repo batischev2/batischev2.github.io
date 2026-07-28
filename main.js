@@ -212,10 +212,17 @@
     const name = String(data.get("name") || "").trim();
     const contact = String(data.get("contact") || "").trim();
     const message = String(data.get("message") || "").trim();
+    if (!name || !contact || !message) return;
+
     const body = `${t(lang, "form.mailName")}: ${name}\n${t(lang, "form.mailContact")}: ${contact}\n${t(lang, "form.mailTask")}: ${message}`;
-    const mailto = `mailto:vitek.bithev97@gmail.com?subject=${encodeURIComponent(
-      t(lang, "form.mailSubject") + name
-    )}&body=${encodeURIComponent(body)}`;
-    window.location.href = mailto;
+    const subject = t(lang, "form.mailSubject") + name;
+    const mailtoUrl = `mailto:vitek.bithev97@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    const mailLink = document.createElement("a");
+    mailLink.href = mailtoUrl;
+    mailLink.style.display = "none";
+    document.body.appendChild(mailLink);
+    mailLink.click();
+    mailLink.remove();
   });
 })();

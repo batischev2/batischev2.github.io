@@ -98,19 +98,24 @@ html {
 }
 
 .skip-link {
-  position: absolute;
-  left: var(--page-pad);
-  top: -100px;
-  z-index: 100;
+  position: fixed;
+  left: 1rem;
+  top: 0.75rem;
+  z-index: 200;
   padding: 0.7rem 1rem;
   background: var(--ink);
   color: var(--paper);
   border-radius: var(--radius);
   font-weight: 600;
+  transform: translateY(-160%);
+  transition: transform 0.2s var(--ease);
 }
 
-.skip-link:focus {
-  top: 0.75rem;
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
 }
 
 body {

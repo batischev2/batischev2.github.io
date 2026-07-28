@@ -1,4 +1,4 @@
-const CACHE = "vb-static-v2";
+const CACHE = "vb-static-v3";
 const PRECACHE = [
   "/",
   "/index.html",

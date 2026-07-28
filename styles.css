@@ -122,7 +122,6 @@ img {
 h1,
 h2,
 h3,
-.brand-mark,
 .logo,
 .service-num,
 .step-index {
@@ -417,21 +416,13 @@ main,
   max-width: 100%;
 }
 
-.brand-mark {
-  margin: 0;
-  font-size: clamp(1.35rem, 3.4vw, 2rem);
-  font-weight: 700;
-  color: var(--teal-deep);
-  animation: rise 0.9s var(--ease) both;
-}
-
 .hero h1 {
-  animation: rise 0.9s 0.08s var(--ease) both;
+  animation: rise 0.9s var(--ease) both;
 }
 
 .hero-lead {
   font-size: 1.08rem;
-  animation: rise 0.9s 0.16s var(--ease) both;
+  animation: rise 0.9s 0.08s var(--ease) both;
 }
 
 .hero-actions {
@@ -439,7 +430,7 @@ main,
   flex-wrap: wrap;
   gap: 0.75rem;
   margin-top: 1.75rem;
-  animation: rise 0.9s 0.24s var(--ease) both;
+  animation: rise 0.9s 0.16s var(--ease) both;
 }
 
 .btn {
@@ -1041,6 +1032,10 @@ section {
 
   .hero {
     align-items: center;
+  }
+
+  .hero-inner {
+    margin-left: -160px;
   }
 
   .trust {

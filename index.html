@@ -11,12 +11,17 @@
   <title>Виктор Батищев — разработка сайтов и приложений</title>
   <script>
     (() => {
-      const key = "vb-theme";
-      const saved = localStorage.getItem(key);
-      const theme = saved === "light" || saved === "dark"
-        ? saved
+      const themeKey = "vb-theme";
+      const langKey = "vb-lang";
+      const savedTheme = localStorage.getItem(themeKey);
+      const theme = savedTheme === "light" || savedTheme === "dark"
+        ? savedTheme
         : (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
       document.documentElement.setAttribute("data-theme", theme);
+      const savedLang = localStorage.getItem(langKey);
+      const lang = savedLang === "en" || savedLang === "ru" ? savedLang : "ru";
+      document.documentElement.setAttribute("lang", lang);
+      document.documentElement.setAttribute("data-lang", lang);
     })();
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -28,16 +33,19 @@
   <div class="noise" aria-hidden="true"></div>
 
   <header class="site-header" id="top">
-    <a class="logo" href="#top" aria-label="Наверх">Виктор Батищев</a>
-    <nav class="nav" aria-label="Основная навигация">
-      <a href="#services">Услуги</a>
-      <a href="#process">Как работаю</a>
-      <a href="#stack">Стек</a>
-      <a href="#faq">FAQ</a>
-      <a class="nav-cta" href="#contact">Обсудить проект</a>
+    <a class="logo" href="#top" data-i18n-aria="aria.top">Виктор Батищев</a>
+    <nav class="nav" data-i18n-aria="aria.nav">
+      <a href="#services" data-i18n="nav.services">Услуги</a>
+      <a href="#process" data-i18n="nav.process">Как работаю</a>
+      <a href="#stack" data-i18n="nav.stack">Стек</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <a class="nav-cta" href="#contact" data-i18n="nav.cta">Обсудить проект</a>
     </nav>
     <div class="header-actions">
-      <button class="theme-toggle" type="button" aria-label="Переключить тему" title="Тема">
+      <button class="lang-toggle" type="button" data-i18n-aria="aria.lang" title="Language">
+        <span data-i18n="lang.short">EN</span>
+      </button>
+      <button class="theme-toggle" type="button" data-i18n-aria="aria.theme" title="Theme">
         <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true">
           <circle cx="12" cy="12" r="4"></circle>
           <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"></path>
@@ -46,18 +54,18 @@
           <path d="M21 14.5A8.5 8.5 0 1 1 9.5 3 7 7 0 0 0 21 14.5z"></path>
         </svg>
       </button>
-      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Меню">
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="mobile-nav" data-i18n-aria="aria.menu">
         <span></span><span></span>
       </button>
     </div>
   </header>
 
   <div class="mobile-nav" id="mobile-nav" hidden>
-    <a href="#services">Услуги</a>
-    <a href="#process">Как работаю</a>
-    <a href="#stack">Стек</a>
-    <a href="#faq">FAQ</a>
-    <a href="#contact">Обсудить проект</a>
+    <a href="#services" data-i18n="nav.services">Услуги</a>
+    <a href="#process" data-i18n="nav.process">Как работаю</a>
+    <a href="#stack" data-i18n="nav.stack">Стек</a>
+    <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    <a href="#contact" data-i18n="nav.cta">Обсудить проект</a>
   </div>
 
   <main>
@@ -69,41 +77,41 @@
       </div>
       <div class="hero-inner">
         <p class="brand-mark">Виктор Батищев</p>
-        <h1>Цифровые продукты,<br />которые приносят заявки</h1>
-        <p class="hero-lead">Сайты, мобильные приложения, SEO, боты и ИТ-консультации — от идеи до стабильного запуска.</p>
+        <h1 data-i18n-html="hero.title">Цифровые продукты,<br />которые приносят заявки</h1>
+        <p class="hero-lead" data-i18n="hero.lead">Сайты, мобильные приложения, SEO, боты и ИТ-консультации — от идеи до стабильного запуска.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#contact">Получить оценку проекта</a>
-          <a class="btn btn-ghost" href="#services">Смотреть услуги</a>
+          <a class="btn btn-primary" href="#contact" data-i18n="hero.cta">Получить оценку проекта</a>
+          <a class="btn btn-ghost" href="#services" data-i18n="hero.services">Смотреть услуги</a>
         </div>
       </div>
     </section>
 
-    <section class="trust" aria-label="Ключевые факты">
+    <section class="trust" data-i18n-aria="aria.trust">
       <div class="trust-panel">
         <div class="trust-track">
           <article class="trust-item">
             <span class="trust-index" aria-hidden="true">01</span>
             <strong class="trust-value">6+</strong>
-            <span class="trust-label">направлений услуг</span>
-            <p class="trust-hint">Сайты, apps, SEO, боты и консультации</p>
+            <span class="trust-label" data-i18n="trust.1.label">направлений услуг</span>
+            <p class="trust-hint" data-i18n="trust.1.hint">Сайты, apps, SEO, боты и консультации</p>
           </article>
           <article class="trust-item">
             <span class="trust-index" aria-hidden="true">02</span>
             <strong class="trust-value">Full-cycle</strong>
-            <span class="trust-label">от дизайна до деплоя</span>
-            <p class="trust-hint">Один контур без потери контекста</p>
+            <span class="trust-label" data-i18n="trust.2.label">от дизайна до деплоя</span>
+            <p class="trust-hint" data-i18n="trust.2.hint">Один контур без потери контекста</p>
           </article>
           <article class="trust-item">
             <span class="trust-index" aria-hidden="true">03</span>
             <strong class="trust-value">Web + Mobile</strong>
-            <span class="trust-label">один подрядчик</span>
-            <p class="trust-hint">Единый стек и ответственность</p>
+            <span class="trust-label" data-i18n="trust.3.label">один подрядчик</span>
+            <p class="trust-hint" data-i18n="trust.3.hint">Единый стек и ответственность</p>
           </article>
           <article class="trust-item">
             <span class="trust-index" aria-hidden="true">04</span>
             <strong class="trust-value">24–72ч</strong>
-            <span class="trust-label">ответ по брифу</span>
-            <p class="trust-hint">Быстрая оценка объёма и сроков</p>
+            <span class="trust-label" data-i18n="trust.4.label">ответ по брифу</span>
+            <p class="trust-hint" data-i18n="trust.4.hint">Быстрая оценка объёма и сроков</p>
           </article>
         </div>
       </div>
@@ -111,91 +119,91 @@
 
     <section class="pain" id="why">
       <div class="section-head">
-        <p class="eyebrow">Зачем ко мне</p>
-        <h2>Когда нужен разработчик, а не бесконечные правки</h2>
-        <p class="section-lead">Беру задачу целиком: архитектура, интерфейс, код, запуск и дальнейшая поддержка.</p>
+        <p class="eyebrow" data-i18n="why.eyebrow">Зачем ко мне</p>
+        <h2 data-i18n="why.title">Когда нужен разработчик, а не бесконечные правки</h2>
+        <p class="section-lead" data-i18n="why.lead">Беру задачу целиком: архитектура, интерфейс, код, запуск и дальнейшая поддержка.</p>
       </div>
       <ul class="pain-list">
         <li>
-          <h3>Нет времени искать 5 специалистов</h3>
-          <p>Сайт, приложение, SEO и интеграции — в одном контуре, с понятными сроками и этапами.</p>
+          <h3 data-i18n="why.1.title">Нет времени искать 5 специалистов</h3>
+          <p data-i18n="why.1.text">Сайт, приложение, SEO и интеграции — в одном контуре, с понятными сроками и этапами.</p>
         </li>
         <li>
-          <h3>Нужен результат, а не «красивый макет»</h3>
-          <p>Делаю интерфейсы и код под конверсию: скорость, ясный оффер, аналитика и SEO-база.</p>
+          <h3 data-i18n="why.2.title">Нужен результат, а не «красивый макет»</h3>
+          <p data-i18n="why.2.text">Делаю интерфейсы и код под конверсию: скорость, ясный оффер, аналитика и SEO-база.</p>
         </li>
         <li>
-          <h3>Хочется предсказуемый процесс</h3>
-          <p>Фиксируем цели, объём и критерии готовности. Вы всегда понимаете, на каком этапе проект.</p>
+          <h3 data-i18n="why.3.title">Хочется предсказуемый процесс</h3>
+          <p data-i18n="why.3.text">Фиксируем цели, объём и критерии готовности. Вы всегда понимаете, на каком этапе проект.</p>
         </li>
       </ul>
     </section>
 
     <section class="services" id="services">
       <div class="section-head">
-        <p class="eyebrow">Услуги</p>
-        <h2>Что могу сделать для вашего бизнеса</h2>
-        <p class="section-lead">Выберите направление — или напишите задачу своими словами, подскажу оптимальный путь.</p>
+        <p class="eyebrow" data-i18n="services.eyebrow">Услуги</p>
+        <h2 data-i18n="services.title">Что могу сделать для вашего бизнеса</h2>
+        <p class="section-lead" data-i18n="services.lead">Выберите направление — или напишите задачу своими словами, подскажу оптимальный путь.</p>
       </div>
       <div class="service-list">
         <article class="service">
           <span class="service-num">01</span>
-          <h3>Лендинги и сайты любой сложности</h3>
-          <p>От продающих одностраничников до многостраничных сервисов и личных кабинетов на современном стеке.</p>
+          <h3 data-i18n="s1.title">Лендинги и сайты любой сложности</h3>
+          <p data-i18n="s1.text">От продающих одностраничников до многостраничных сервисов и личных кабинетов на современном стеке.</p>
           <ul>
-            <li>Структура и тексты под оффер</li>
-            <li>Адаптив и высокая скорость</li>
-            <li>Формы, CRM, аналитика</li>
+            <li data-i18n="s1.a">Структура и тексты под оффер</li>
+            <li data-i18n="s1.b">Адаптив и высокая скорость</li>
+            <li data-i18n="s1.c">Формы, CRM, аналитика</li>
           </ul>
         </article>
         <article class="service">
           <span class="service-num">02</span>
-          <h3>Кроссплатформенные мобильные приложения</h3>
-          <p>iOS и Android из одной кодовой базы на Flutter или React Native — быстрее и дешевле нативной пары.</p>
+          <h3 data-i18n="s2.title">Кроссплатформенные мобильные приложения</h3>
+          <p data-i18n="s2.text">iOS и Android из одной кодовой базы на Flutter или React Native — быстрее и дешевле нативной пары.</p>
           <ul>
-            <li>MVP и продуктовые релизы</li>
-            <li>API, авторизация, пуши</li>
-            <li>Публикация в сторы</li>
+            <li data-i18n="s2.a">MVP и продуктовые релизы</li>
+            <li data-i18n="s2.b">API, авторизация, пуши</li>
+            <li data-i18n="s2.c">Публикация в сторы</li>
           </ul>
         </article>
         <article class="service">
           <span class="service-num">03</span>
-          <h3>SEO-оптимизация и продвижение</h3>
-          <p>Техническая база, контентная структура и рост органики без «чёрных» схем.</p>
+          <h3 data-i18n="s3.title">SEO-оптимизация и продвижение</h3>
+          <p data-i18n="s3.text">Техническая база, контентная структура и рост органики без «чёрных» схем.</p>
           <ul>
-            <li>Аудит и исправление ошибок</li>
-            <li>Скорость и Core Web Vitals</li>
-            <li>Семантика и посадочные</li>
+            <li data-i18n="s3.a">Аудит и исправление ошибок</li>
+            <li data-i18n="s3.b">Скорость и Core Web Vitals</li>
+            <li data-i18n="s3.c">Семантика и посадочные</li>
           </ul>
         </article>
         <article class="service">
           <span class="service-num">04</span>
-          <h3>Консультирование в сфере ИТ</h3>
-          <p>Помогу выбрать стек, оценить подрядчика, спланировать архитектуру или дорожную карту продукта.</p>
+          <h3 data-i18n="s4.title">Консультирование в сфере ИТ</h3>
+          <p data-i18n="s4.text">Помогу выбрать стек, оценить подрядчика, спланировать архитектуру или дорожную карту продукта.</p>
           <ul>
-            <li>Разбор ТЗ и рисков</li>
-            <li>Технический аудит</li>
-            <li>Стратегия разработки</li>
+            <li data-i18n="s4.a">Разбор ТЗ и рисков</li>
+            <li data-i18n="s4.b">Технический аудит</li>
+            <li data-i18n="s4.c">Стратегия разработки</li>
           </ul>
         </article>
         <article class="service">
           <span class="service-num">05</span>
-          <h3>Парсеры и чат-боты</h3>
-          <p>Автоматизация сбора данных и общения с клиентами в Telegram и на сайте.</p>
+          <h3 data-i18n="s5.title">Парсеры и чат-боты</h3>
+          <p data-i18n="s5.text">Автоматизация сбора данных и общения с клиентами в Telegram и на сайте.</p>
           <ul>
-            <li>Парсинг и интеграции</li>
-            <li>Боты продаж и поддержки</li>
-            <li>Уведомления и сценарии</li>
+            <li data-i18n="s5.a">Парсинг и интеграции</li>
+            <li data-i18n="s5.b">Боты продаж и поддержки</li>
+            <li data-i18n="s5.c">Уведомления и сценарии</li>
           </ul>
         </article>
         <article class="service">
           <span class="service-num">06</span>
-          <h3>Дизайн и сайты на CMS</h3>
-          <p>Удобные сайты на популярных CMS: вы сами можете менять контент без разработчика.</p>
+          <h3 data-i18n="s6.title">Дизайн и сайты на CMS</h3>
+          <p data-i18n="s6.text">Удобные сайты на популярных CMS: вы сами можете менять контент без разработчика.</p>
           <ul>
-            <li>Дизайн под бренд</li>
-            <li>WordPress и аналоги</li>
-            <li>Обучение работе с админкой</li>
+            <li data-i18n="s6.a">Дизайн под бренд</li>
+            <li data-i18n="s6.b">WordPress и аналоги</li>
+            <li data-i18n="s6.c">Обучение работе с админкой</li>
           </ul>
         </article>
       </div>
@@ -203,37 +211,37 @@
 
     <section class="process" id="process">
       <div class="section-head">
-        <p class="eyebrow">Процесс</p>
-        <h2>От первого сообщения до запуска</h2>
-        <p class="section-lead">Прозрачные этапы — без сюрпризов в середине проекта.</p>
+        <p class="eyebrow" data-i18n="process.eyebrow">Процесс</p>
+        <h2 data-i18n="process.title">От первого сообщения до запуска</h2>
+        <p class="section-lead" data-i18n="process.lead">Прозрачные этапы — без сюрпризов в середине проекта.</p>
       </div>
       <ol class="steps">
         <li>
           <span class="step-index">1</span>
           <div>
-            <h3>Бриф и оценка</h3>
-            <p>Уточняем цели, аудиторию и ограничения. Вы получаете объём, сроки и стоимость.</p>
+            <h3 data-i18n="p1.title">Бриф и оценка</h3>
+            <p data-i18n="p1.text">Уточняем цели, аудиторию и ограничения. Вы получаете объём, сроки и стоимость.</p>
           </div>
         </li>
         <li>
           <span class="step-index">2</span>
           <div>
-            <h3>Прототип и дизайн</h3>
-            <p>Согласовываем структуру и визуал до активной разработки, чтобы не переделывать код.</p>
+            <h3 data-i18n="p2.title">Прототип и дизайн</h3>
+            <p data-i18n="p2.text">Согласовываем структуру и визуал до активной разработки, чтобы не переделывать код.</p>
           </div>
         </li>
         <li>
           <span class="step-index">3</span>
           <div>
-            <h3>Разработка и тесты</h3>
-            <p>Итерации с демо: смотрите прогресс, даёте фидбек, проверяем на реальных устройствах.</p>
+            <h3 data-i18n="p3.title">Разработка и тесты</h3>
+            <p data-i18n="p3.text">Итерации с демо: смотрите прогресс, даёте фидбек, проверяем на реальных устройствах.</p>
           </div>
         </li>
         <li>
           <span class="step-index">4</span>
           <div>
-            <h3>Запуск и поддержка</h3>
-            <p>Деплой, аналитика, инструкции. По желанию — сопровождение и развитие.</p>
+            <h3 data-i18n="p4.title">Запуск и поддержка</h3>
+            <p data-i18n="p4.text">Деплой, аналитика, инструкции. По желанию — сопровождение и развитие.</p>
           </div>
         </li>
       </ol>
@@ -241,9 +249,9 @@
 
     <section class="stack" id="stack">
       <div class="section-head">
-        <p class="eyebrow">Стек</p>
-        <h2>Инструменты, на которых строю решения</h2>
-        <p class="section-lead">Подбираю технологии под задачу, а не наоборот.</p>
+        <p class="eyebrow" data-i18n="stack.eyebrow">Стек</p>
+        <h2 data-i18n="stack.title">Инструменты, на которых строю решения</h2>
+        <p class="section-lead" data-i18n="stack.lead">Подбираю технологии под задачу, а не наоборот.</p>
       </div>
       <ul class="stack-grid">
         <li>React</li>
@@ -261,62 +269,62 @@
 
     <section class="offer">
       <div class="offer-panel">
-        <p class="eyebrow">Быстрый старт</p>
-        <h2>Бесплатная первичная оценка за 24–72 часа</h2>
-        <p>Опишите задачу в Telegram или на почту — верну понимание объёма, сроков и следующего шага.</p>
+        <p class="eyebrow" data-i18n="offer.eyebrow">Быстрый старт</p>
+        <h2 data-i18n="offer.title">Бесплатная первичная оценка за 24–72 часа</h2>
+        <p data-i18n="offer.text">Опишите задачу в Telegram или на почту — верну понимание объёма, сроков и следующего шага.</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://t.me/batischev97" target="_blank" rel="noopener">Написать в Telegram</a>
-          <a class="btn btn-ghost" href="mailto:vitek.batishev97@gmail.com">Отправить email</a>
+          <a class="btn btn-primary" href="https://t.me/batischev97" target="_blank" rel="noopener" data-i18n="offer.tg">Написать в Telegram</a>
+          <a class="btn btn-ghost" href="mailto:vitek.bithev97@gmail.com" data-i18n="offer.email">Отправить email</a>
         </div>
       </div>
     </section>
 
     <section class="faq" id="faq">
       <div class="section-head">
-        <p class="eyebrow">FAQ</p>
-        <h2>Частые вопросы перед стартом</h2>
+        <p class="eyebrow" data-i18n="faq.eyebrow">FAQ</p>
+        <h2 data-i18n="faq.title">Частые вопросы перед стартом</h2>
       </div>
       <div class="faq-list">
         <details open>
-          <summary>Сколько стоит разработка?</summary>
-          <p>Зависит от объёма: лендинг, сложный сайт, приложение или бот. После короткого брифа даю вилку и фиксирую смету по этапам.</p>
+          <summary data-i18n="faq.1.q">Сколько стоит разработка?</summary>
+          <p data-i18n="faq.1.a">Зависит от объёма: лендинг, сложный сайт, приложение или бот. После короткого брифа даю вилку и фиксирую смету по этапам.</p>
         </details>
         <details>
-          <summary>Сколько времени занимает проект?</summary>
-          <p>Лендинг — обычно от 1–2 недель. Сайт средней сложности — от 3–6 недель. Мобильное приложение и крупные системы — по roadmap после оценки.</p>
+          <summary data-i18n="faq.2.q">Сколько времени занимает проект?</summary>
+          <p data-i18n="faq.2.a">Лендинг — обычно от 1–2 недель. Сайт средней сложности — от 3–6 недель. Мобильное приложение и крупные системы — по roadmap после оценки.</p>
         </details>
         <details>
-          <summary>Можно ли начать с MVP?</summary>
-          <p>Да. Часто так и делаем: сначала рабочий минимум для проверки гипотезы, затем наращиваем функции.</p>
+          <summary data-i18n="faq.3.q">Можно ли начать с MVP?</summary>
+          <p data-i18n="faq.3.a">Да. Часто так и делаем: сначала рабочий минимум для проверки гипотезы, затем наращиваем функции.</p>
         </details>
         <details>
-          <summary>Вы делаете дизайн сами?</summary>
-          <p>Да. Могу спроектировать интерфейс с нуля или реализовать по вашему макету в Figma.</p>
+          <summary data-i18n="faq.4.q">Вы делаете дизайн сами?</summary>
+          <p data-i18n="faq.4.a">Да. Могу спроектировать интерфейс с нуля или реализовать по вашему макету в Figma.</p>
         </details>
         <details>
-          <summary>Как происходит оплата?</summary>
-          <p>По этапам: предоплата на старт, далее платежи по согласованным вехам. Для консультаций — почасово или фикс за сессию.</p>
+          <summary data-i18n="faq.5.q">Как происходит оплата?</summary>
+          <p data-i18n="faq.5.a">По этапам: предоплата на старт, далее платежи по согласованным вехам. Для консультаций — почасово или фикс за сессию.</p>
         </details>
       </div>
     </section>
 
     <section class="contact" id="contact">
       <div class="section-head">
-        <p class="eyebrow">Контакты</p>
-        <h2>Давайте обсудим ваш проект</h2>
-        <p class="section-lead">Напишите удобным способом — отвечу и предложу план действий.</p>
+        <p class="eyebrow" data-i18n="contact.eyebrow">Контакты</p>
+        <h2 data-i18n="contact.title">Давайте обсудим ваш проект</h2>
+        <p class="section-lead" data-i18n="contact.lead">Напишите удобным способом — отвечу и предложу план действий.</p>
       </div>
       <div class="contact-grid">
         <a class="contact-link" href="https://t.me/batischev97" target="_blank" rel="noopener">
           <span class="contact-label">Telegram</span>
           <span class="contact-value">@batischev97</span>
         </a>
-        <a class="contact-link" href="mailto:vitek.batishev97@gmail.com">
+        <a class="contact-link" href="mailto:vitek.bithev97@gmail.com">
           <span class="contact-label">Email</span>
-          <span class="contact-value">vitek.batishev97@gmail.com</span>
+          <span class="contact-value">vitek.bithev97@gmail.com</span>
         </a>
         <a class="contact-link" href="tel:+79493528458">
-          <span class="contact-label">Телефон</span>
+          <span class="contact-label" data-i18n="contact.phone">Телефон</span>
           <span class="contact-value">+7 949 352-84-58</span>
         </a>
         <a class="contact-link" href="https://github.com/batischev2" target="_blank" rel="noopener">
@@ -324,22 +332,22 @@
           <span class="contact-value">batischev2</span>
         </a>
       </div>
-      <form class="lead-form" id="lead-form" action="mailto:vitek.batishev97@gmail.com" method="post" enctype="text/plain">
-        <p class="form-title">Или оставьте заявку прямо здесь</p>
+      <form class="lead-form" id="lead-form" action="mailto:vitek.bithev97@gmail.com" method="post" enctype="text/plain">
+        <p class="form-title" data-i18n="form.title">Или оставьте заявку прямо здесь</p>
         <label>
-          Имя
-          <input type="text" name="name" autocomplete="name" required placeholder="Как к вам обращаться" />
+          <span data-i18n="form.name">Имя</span>
+          <input type="text" name="name" autocomplete="name" required data-i18n-placeholder="form.namePh" placeholder="Как к вам обращаться" />
         </label>
         <label>
-          Контакт
-          <input type="text" name="contact" required placeholder="Telegram, email или телефон" />
+          <span data-i18n="form.contact">Контакт</span>
+          <input type="text" name="contact" required data-i18n-placeholder="form.contactPh" placeholder="Telegram, email или телефон" />
         </label>
         <label>
-          Задача
-          <textarea name="message" rows="4" required placeholder="Кратко: что нужно сделать и к какому сроку"></textarea>
+          <span data-i18n="form.message">Задача</span>
+          <textarea name="message" rows="4" required data-i18n-placeholder="form.messagePh" placeholder="Кратко: что нужно сделать и к какому сроку"></textarea>
         </label>
-        <button class="btn btn-primary" type="submit">Отправить заявку</button>
-        <p class="form-note">Отправка откроет почтовый клиент. Быстрее — написать в Telegram.</p>
+        <button class="btn btn-primary" type="submit" data-i18n="form.submit">Отправить заявку</button>
+        <p class="form-note" data-i18n="form.note">Отправка откроет почтовый клиент. Быстрее — написать в Telegram.</p>
       </form>
     </section>
   </main>
@@ -347,13 +355,14 @@
   <footer class="site-footer">
     <div>
       <strong>Виктор Батищев</strong>
-      <p>Разработка сайтов, приложений и ИТ-решений</p>
+      <p data-i18n="footer.text">Разработка сайтов, приложений и ИТ-решений</p>
     </div>
     <p class="copy">© <span id="year"></span> Victor Batischev</p>
   </footer>
 
-  <a class="float-cta" href="https://t.me/batischev97" target="_blank" rel="noopener" aria-label="Написать в Telegram">TG</a>
+  <a class="float-cta" href="https://t.me/batischev97" target="_blank" rel="noopener" data-i18n-aria="aria.tg">TG</a>
 
+  <script src="i18n.js"></script>
   <script src="main.js"></script>
 </body>
 </html>

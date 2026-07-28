@@ -244,6 +244,7 @@ main,
 }
 
 .theme-toggle,
+.lang-toggle,
 .menu-btn {
   width: 44px;
   height: 44px;
@@ -258,9 +259,17 @@ main,
 }
 
 .theme-toggle:hover,
+.lang-toggle:hover,
 .menu-btn:hover {
   border-color: var(--teal);
   background: var(--surface);
+}
+
+.lang-toggle {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
 }
 
 .theme-toggle svg {

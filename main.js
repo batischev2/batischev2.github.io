@@ -3,15 +3,58 @@
   if (year) year.textContent = String(new Date().getFullYear());
 
   const themeKey = "vb-theme";
+  const langKey = "vb-lang";
   const root = document.documentElement;
   const themeToggle = document.querySelector(".theme-toggle");
+  const langToggle = document.querySelector(".lang-toggle");
   const themeColorMeta = document.getElementById("theme-color-meta");
+  const metaDescription = document.querySelector('meta[name="description"]');
+  const ogTitle = document.querySelector('meta[property="og:title"]');
+  const ogDescription = document.querySelector('meta[property="og:description"]');
+
+  const t = (lang, key) => I18N[lang]?.[key] ?? I18N.ru[key] ?? key;
+
+  const applyI18n = (lang) => {
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (key) el.textContent = t(lang, key);
+    });
+
+    document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-html");
+      if (key) el.innerHTML = t(lang, key);
+    });
+
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      if (key) el.setAttribute("placeholder", t(lang, key));
+    });
+
+    document.querySelectorAll("[data-i18n-aria]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-aria");
+      if (!key) return;
+      let ariaKey = key;
+      if (key === "aria.theme") {
+        ariaKey =
+          root.getAttribute("data-theme") === "dark"
+            ? "aria.themeToLight"
+            : "aria.themeToDark";
+      }
+      el.setAttribute("aria-label", t(lang, ariaKey));
+    });
+
+    document.title = t(lang, "meta.title");
+    metaDescription?.setAttribute("content", t(lang, "meta.description"));
+    ogTitle?.setAttribute("content", t(lang, "meta.ogTitle"));
+    ogDescription?.setAttribute("content", t(lang, "meta.ogDescription"));
+  };
 
   const syncThemeUi = (theme) => {
+    const lang = root.getAttribute("data-lang") || "ru";
     const isDark = theme === "dark";
     themeToggle?.setAttribute(
       "aria-label",
-      isDark ? "Включить светлую тему" : "Включить тёмную тему"
+      t(lang, isDark ? "aria.themeToLight" : "aria.themeToDark")
     );
     if (themeColorMeta) {
       themeColorMeta.setAttribute("content", isDark ? "#0B1214" : "#0B3D4A");
@@ -24,11 +67,29 @@
     syncThemeUi(theme);
   };
 
+  const applyLang = (lang) => {
+    root.setAttribute("lang", lang);
+    root.setAttribute("data-lang", lang);
+    localStorage.setItem(langKey, lang);
+    applyI18n(lang);
+    syncThemeUi(root.getAttribute("data-theme") || "light");
+  };
+
+  const currentLang =
+    root.getAttribute("data-lang") === "en" || root.getAttribute("lang") === "en"
+      ? "en"
+      : "ru";
+  applyLang(currentLang);
   syncThemeUi(root.getAttribute("data-theme") || "light");
 
   themeToggle?.addEventListener("click", () => {
     const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
     applyTheme(next);
+  });
+
+  langToggle?.addEventListener("click", () => {
+    const next = root.getAttribute("data-lang") === "en" ? "ru" : "en";
+    applyLang(next);
   });
 
   const header = document.querySelector(".site-header");
@@ -84,13 +145,14 @@
   const form = document.getElementById("lead-form");
   form?.addEventListener("submit", (event) => {
     event.preventDefault();
+    const lang = root.getAttribute("data-lang") || "ru";
     const data = new FormData(form);
     const name = String(data.get("name") || "").trim();
     const contact = String(data.get("contact") || "").trim();
     const message = String(data.get("message") || "").trim();
-    const body = `Имя: ${name}\nКонтакт: ${contact}\nЗадача: ${message}`;
+    const body = `${t(lang, "form.mailName")}: ${name}\n${t(lang, "form.mailContact")}: ${contact}\n${t(lang, "form.mailTask")}: ${message}`;
     const mailto = `mailto:vitek.bithev97@gmail.com?subject=${encodeURIComponent(
-      "Заявка с сайта — " + name
+      t(lang, "form.mailSubject") + name
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;
   });

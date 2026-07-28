@@ -2,6 +2,35 @@
   const year = document.getElementById("year");
   if (year) year.textContent = String(new Date().getFullYear());
 
+  const themeKey = "vb-theme";
+  const root = document.documentElement;
+  const themeToggle = document.querySelector(".theme-toggle");
+  const themeColorMeta = document.getElementById("theme-color-meta");
+
+  const syncThemeUi = (theme) => {
+    const isDark = theme === "dark";
+    themeToggle?.setAttribute(
+      "aria-label",
+      isDark ? "Включить светлую тему" : "Включить тёмную тему"
+    );
+    if (themeColorMeta) {
+      themeColorMeta.setAttribute("content", isDark ? "#0B1214" : "#0B3D4A");
+    }
+  };
+
+  const applyTheme = (theme) => {
+    root.setAttribute("data-theme", theme);
+    localStorage.setItem(themeKey, theme);
+    syncThemeUi(theme);
+  };
+
+  syncThemeUi(root.getAttribute("data-theme") || "light");
+
+  themeToggle?.addEventListener("click", () => {
+    const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+    applyTheme(next);
+  });
+
   const header = document.querySelector(".site-header");
   const menuBtn = document.querySelector(".menu-btn");
   const mobileNav = document.getElementById("mobile-nav");
@@ -60,7 +89,7 @@
     const contact = String(data.get("contact") || "").trim();
     const message = String(data.get("message") || "").trim();
     const body = `Имя: ${name}\nКонтакт: ${contact}\nЗадача: ${message}`;
-    const mailto = `mailto:vitek.batishev97@gmail.com?subject=${encodeURIComponent(
+    const mailto = `mailto:vitek.bithev97@gmail.com?subject=${encodeURIComponent(
       "Заявка с сайта — " + name
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = mailto;

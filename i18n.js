@@ -16,6 +16,7 @@ const I18N = {
     "aria.trust": "Ключевые факты",
     "aria.tg": "Написать в Telegram",
     "nav.services": "Услуги",
+    "nav.cases": "Кейсы",
     "nav.process": "Как работаю",
     "nav.stack": "Стек",
     "nav.faq": "FAQ",
@@ -87,6 +88,23 @@ const I18N = {
     "s6.a": "Дизайн под бренд",
     "s6.b": "WordPress и аналоги",
     "s6.c": "Обучение работе с админкой",
+    "cases.eyebrow": "Кейсы",
+    "cases.title": "Проекты, которые уже работают",
+    "cases.lead":
+      "Примеры продуктов из разных ниш — от корпоративного wellbeing до промышленной автоматизации.",
+    "case.hb.title": "Приложение для корпоративного благополучия",
+    "case.hb.text":
+      "Цифровая платформа wellbeing для сотрудников: привычки, активность, поддержка и вовлечённость внутри компании.",
+    "case.itg.title": "Платформа для аутстаффинга персонала",
+    "case.itg.text":
+      "Сервис подбора и управления IT-специалистами: заявки, команды, статусы и прозрачный цикл сотрудничества.",
+    "case.msa.title": "Автоматизация процессов на производстве",
+    "case.msa.text":
+      "Система, которая снижает рутину на производстве: учёт операций, контроль этапов и ускорение внутренних процессов.",
+    "case.as.title": "Система поиска и заказа эвакуаторов",
+    "case.as.text":
+      "Сервис для быстрого поиска эвакуатора рядом: заказ, статусы поездки и удобная связь с исполнителями.",
+    "case.as.tag": "Автоштурман",
     "process.eyebrow": "Процесс",
     "process.title": "От первого сообщения до запуска",
     "process.lead": "Прозрачные этапы — без сюрпризов в середине проекта.",
@@ -166,6 +184,7 @@ const I18N = {
     "aria.trust": "Key facts",
     "aria.tg": "Message on Telegram",
     "nav.services": "Services",
+    "nav.cases": "Cases",
     "nav.process": "Process",
     "nav.stack": "Stack",
     "nav.faq": "FAQ",
@@ -237,6 +256,23 @@ const I18N = {
     "s6.a": "Brand-aligned design",
     "s6.b": "WordPress and similar CMS",
     "s6.c": "Admin panel training",
+    "cases.eyebrow": "Cases",
+    "cases.title": "Projects already in production",
+    "cases.lead":
+      "Product examples across niches — from corporate wellbeing to industrial automation.",
+    "case.hb.title": "Corporate wellbeing application",
+    "case.hb.text":
+      "A digital wellbeing platform for employees: habits, activity, support and engagement inside the company.",
+    "case.itg.title": "Staff outstaffing platform",
+    "case.itg.text":
+      "A service for sourcing and managing IT specialists: requests, teams, statuses and a transparent collaboration cycle.",
+    "case.msa.title": "Manufacturing process automation",
+    "case.msa.text":
+      "A system that cuts production routine: operation tracking, stage control and faster internal workflows.",
+    "case.as.title": "Tow truck search and booking system",
+    "case.as.text":
+      "A service to quickly find a nearby tow truck: booking, trip statuses and easy contact with providers.",
+    "case.as.tag": "Avtoshturman",
     "process.eyebrow": "Process",
     "process.title": "From first message to launch",
     "process.lead": "Clear stages — no surprises in the middle of the project.",

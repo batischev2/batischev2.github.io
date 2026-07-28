@@ -120,7 +120,7 @@
   });
 
   const revealTargets = document.querySelectorAll(
-    ".section-head, .pain-list li, .service, .steps li, .stack-grid li, .offer-panel, .faq-list details, .contact-link, .lead-form, .trust-item"
+    ".section-head, .pain-list li, .service, .case, .steps li, .stack-grid li, .offer-panel, .faq-list details, .contact-link, .lead-form, .trust-item"
   );
 
   revealTargets.forEach((el) => el.classList.add("reveal"));

@@ -637,6 +637,57 @@ section {
   border-radius: var(--radius);
 }
 
+.cases-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.case {
+  position: relative;
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.5rem 1.35rem 1.6rem;
+  border: 1px solid var(--line);
+  background: var(--surface);
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.case::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--teal), var(--signal));
+}
+
+.case:hover {
+  border-color: rgba(11, 110, 106, 0.35);
+  background: var(--surface-muted);
+  transform: translateY(-2px);
+}
+
+.case-tag {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--teal);
+}
+
+.case h3 {
+  margin: 0;
+  max-width: 18ch;
+}
+
+.case p {
+  color: var(--ink-soft);
+  max-width: 42ch;
+}
+
 .steps {
   counter-reset: step;
 }
@@ -967,6 +1018,11 @@ section {
   .service-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 2rem;
+  }
+
+  .cases-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.1rem;
   }
 
   .contact-grid {

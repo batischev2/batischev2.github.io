@@ -110,6 +110,7 @@
   const header = document.querySelector(".site-header");
   const menuBtn = document.querySelector(".menu-btn");
   const mobileNav = document.getElementById("mobile-nav");
+  const navLinks = document.querySelectorAll(".nav a[href^='#'], .mobile-nav a[href^='#']");
 
   const onScroll = () => {
     if (!header) return;
@@ -118,21 +119,67 @@
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  const closeMenu = () => {
+  const setMenuOpen = (open) => {
     if (!menuBtn || !mobileNav) return;
-    menuBtn.setAttribute("aria-expanded", "false");
-    mobileNav.hidden = true;
+    menuBtn.setAttribute("aria-expanded", String(open));
+    mobileNav.hidden = !open;
+    document.body.classList.toggle("nav-open", open);
   };
+
+  const closeMenu = () => setMenuOpen(false);
 
   menuBtn?.addEventListener("click", () => {
     const open = menuBtn.getAttribute("aria-expanded") === "true";
-    menuBtn.setAttribute("aria-expanded", String(!open));
-    mobileNav.hidden = open;
+    setMenuOpen(!open);
   });
 
   mobileNav?.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", closeMenu);
   });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+
+  const sectionIds = ["services", "cases", "process", "stack", "faq", "contact"];
+  const sections = sectionIds
+    .map((id) => document.getElementById(id))
+    .filter(Boolean);
+
+  const setActiveNav = (id) => {
+    navLinks.forEach((link) => {
+      const href = link.getAttribute("href");
+      const active = href === `#${id}`;
+      link.classList.toggle("is-active", active);
+      if (active) link.setAttribute("aria-current", "true");
+      else link.removeAttribute("aria-current");
+    });
+  };
+
+  if ("IntersectionObserver" in window && sections.length) {
+    const spyMap = new Map();
+    const spy = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          spyMap.set(entry.target.id, entry.isIntersecting ? entry.intersectionRatio : 0);
+        });
+        let bestId = null;
+        let bestRatio = 0;
+        spyMap.forEach((ratio, id) => {
+          if (ratio > bestRatio) {
+            bestRatio = ratio;
+            bestId = id;
+          }
+        });
+        if (bestId) setActiveNav(bestId);
+      },
+      {
+        rootMargin: "-25% 0px -55% 0px",
+        threshold: [0, 0.15, 0.35, 0.55, 0.75, 1],
+      }
+    );
+    sections.forEach((section) => spy.observe(section));
+  }
 
   const revealTargets = document.querySelectorAll(
     ".section-head, .pain-list li, .service, .case, .steps li, .stack-grid li, .offer-panel, .faq-list details, .contact-link, .lead-form, .trust-item"

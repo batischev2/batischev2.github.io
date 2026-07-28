@@ -134,7 +134,7 @@ h1 {
   margin: 0.35rem 0 1rem;
   font-size: clamp(2.4rem, 6.5vw, 4.6rem);
   font-weight: 800;
-  max-width: 12ch;
+  max-width: none;
 }
 
 h2 {
@@ -417,7 +417,12 @@ main,
 }
 
 .hero h1 {
+  max-width: none;
   animation: rise 0.9s var(--ease) both;
+}
+
+.hero h1 .line {
+  display: block;
 }
 
 .hero-lead {

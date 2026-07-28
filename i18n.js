@@ -22,7 +22,7 @@ const I18N = {
     "nav.faq": "FAQ",
     "nav.cta": "Обсудить проект",
     "lang.short": "EN",
-    "hero.title": "Цифровые продукты,<br />которые приносят заявки",
+    "hero.title": "<span class=\"line\">Цифровые продукты,</span><span class=\"line\">которые приносят заявки</span>",
     "hero.lead":
       "Сайты, мобильные приложения, SEO, боты и ИТ-консультации — от идеи до стабильного запуска.",
     "hero.cta": "Получить оценку проекта",
@@ -190,7 +190,7 @@ const I18N = {
     "nav.faq": "FAQ",
     "nav.cta": "Discuss a project",
     "lang.short": "RU",
-    "hero.title": "Digital products<br />that bring leads",
+    "hero.title": "<span class=\"line\">Digital products</span><span class=\"line\">that bring leads</span>",
     "hero.lead":
       "Websites, mobile apps, SEO, bots and IT consulting — from idea to a stable launch.",
     "hero.cta": "Get a project estimate",

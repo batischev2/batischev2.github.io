@@ -742,6 +742,8 @@ section {
 }
 
 .stack-grid li {
+  flex: 1 1 140px;
+  text-align: center;
   padding: 0.85rem 1.1rem;
   border: 1px solid var(--line);
   background: var(--surface-muted);
@@ -1052,10 +1054,6 @@ section {
 
   .hero {
     align-items: center;
-  }
-
-  .hero-inner {
-    margin-left: -160px;
   }
 
   .trust {
